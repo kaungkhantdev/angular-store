@@ -5,6 +5,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { ApiService } from '../../../services/api.service';
+import { Store } from '@ngrx/store';
+import { login } from '../../../state/auth/auth.action';
 
 @Component({
   selector: 'login-form',
@@ -65,6 +67,7 @@ import { ApiService } from '../../../services/api.service';
 })
 export class LoginFromComponent {
     private apiService = inject(ApiService)
+    private store = inject(Store);
     loginForm: FormGroup;
 
     constructor(private fb: FormBuilder) {
@@ -78,23 +81,28 @@ export class LoginFromComponent {
     async onLogin() {
         if (this.loginForm.valid) {
             console.log('Login form data:', this.loginForm.value);
+            this.store.dispatch(
+                login({
+                    username: this.loginForm.value.username,
+                    password: this.loginForm.value.password,
+                })
+            );
+            // const data = {
+            //     username: this.loginForm.value.username,
+            //     password: this.loginForm.value.password
+            // }
             
-            const data = {
-                username: this.loginForm.value.username,
-                password: this.loginForm.value.password
-            }
-            
-            // Subscribe to the Observable to get the data
-            this.apiService.post('/auth/login', data).subscribe({
-              next: (result) => {
-                console.log('Login successful:', result);
-                // Handle the successful login here (e.g., navigate to a new page)
-              },
-              error: (err) => {
-                console.error('Login failed:', err);
-                // Handle the login error here (e.g., show an error message)
-              }
-            });
+            // // Subscribe to the Observable to get the data
+            // this.apiService.post('/auth/login', data).subscribe({
+            //   next: (result) => {
+            //     console.log('Login successful:', result);
+            //     // Handle the successful login here (e.g., navigate to a new page)
+            //   },
+            //   error: (err) => {
+            //     console.error('Login failed:', err);
+            //     // Handle the login error here (e.g., show an error message)
+            //   }
+            // });
         }
     }
 }

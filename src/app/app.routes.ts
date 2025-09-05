@@ -4,6 +4,7 @@ import { AuthLayoutComponent } from './layout/auth-layout.component';
 import { NotFoundPageComponent } from './components/not-found-page.component';
 import { LoginPageComponent } from './features/auth/login-page.component';
 import { LayoutComponent } from './layout/layout.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     {
@@ -13,12 +14,12 @@ export const routes: Routes = [
             {
                 path: '',
                 redirectTo: 'home',
-                pathMatch: 'full'
+                pathMatch: 'full',
             },
             {
                 path: 'home',
-                component: HomePageComponent
-
+                component: HomePageComponent,
+                canMatch: [authGuard],
             }
         ]
     },
