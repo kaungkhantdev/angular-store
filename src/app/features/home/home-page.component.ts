@@ -8,7 +8,7 @@ import { HomeTransitionComponent } from "./components/transitions.component";
     imports: [HomeSummaryComponent, HomeCardsComponent, HomeTransitionComponent],
     template: `
     <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-6 py-8">
+    <main class="py-8">
         <!-- Summary Section -->
         <home-summary />
         <home-cards />
