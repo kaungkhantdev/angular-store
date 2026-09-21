@@ -1,0 +1,38 @@
+<main class="lg:max-w-5xl mx-auto py-6 px-6 lg:px-0">
+<!--  header -->
+  <header class="flex items-center justify-between">
+<!--    logo -->
+    <div class="max-w-[60px]">
+      <img src="/greeting-avatar.svg" alt="App Logo" class="w-full">
+      <h4 class="text-center">Store</h4>
+    </div>
+<!--    auth-->
+    <div class="flex items-center gap-2">
+      <button pButton variant="outlined">Register</button>
+      <button pButton>Login</button>
+    </div>
+  </header>
+<!--  main -->
+  <router-outlet />
+<!--  footer -->
+  <footer class="bg-white border-t border-gray-200 py-8 px-4">
+    <div class="max-w-4xl mx-auto flex flex-col items-center text-center space-y-6">
+      <!-- Brand / Logo -->
+      <div class="max-w-[60px]">
+        <img src="/greeting-avatar.svg" alt="App Logo" class="w-full">
+      </div>
+      <!-- Navigation Links -->
+      <nav class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm font-medium text-gray-600">
+        <a href="#" class="hover:text-gray-900 transition-colors">Home</a>
+        <a href="#" class="hover:text-gray-900 transition-colors">About</a>
+        <a href="#" class="hover:text-gray-900 transition-colors">Services</a>
+        <a href="#" class="hover:text-gray-900 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Copyright -->
+      <p class="text-xs text-gray-400">
+        &copy; 2026 BrandName. Designed with clean utility classes.
+      </p>
+    </div>
+  </footer>
+</main>
