@@ -8,9 +8,9 @@ export const routes: Routes = [
         children: [
           {
             path: '',
-            title: 'Store',
+            title: 'Products',
             loadComponent: () =>
-              import('./features/store/store').then(m => m.Store),
+              import('./features/products/product-list/product-list').then(m => m.ProductList),
           }
         ]
     }
