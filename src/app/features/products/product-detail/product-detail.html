@@ -1,0 +1,38 @@
+<div class="mt-3">
+  <a class="back-link" [routerLink]="['/products']">← All products</a>
+</div>
+@if (product.error()) {
+  <div>
+    <p>Something wrong {{ product.error() }}</p>
+  </div>
+} @else if (product.value(); as item) {
+
+  <div class="flex justify-center my-6">
+    <div class="max-w-sm w-full space-y-2">
+      <div>
+        <div class="relative">
+          <img
+            class="w-full rounded-2xl p-16 border border-gray-100"
+            alt="user header"
+            [src]="item.image"
+          />
+        </div>
+      </div>
+      <div>
+        <span class="font-bold">{{item.title}}</span>
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <p-tag severity="success" [value]="'Rating: ' + (item.rating?.rate ?? 'N/A') + ' (' + item.rating?.count + ')'" />
+        </div>
+      </div>
+      <div class="space-y-4">
+        <p class="text-sm">{{item.description}}</p>
+        <div class="flex items-center justify-between gap-2">
+          <p>$ {{item.price}} </p>
+          <button pButton variant="outlined" class="!rounded-full">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+}

@@ -23,4 +23,14 @@ export class ProductService {
       { defaultValue: []}
     );
   }
+
+  getOneById(id: Signal<number>): HttpResourceRef<Product | null | undefined> {
+    return httpResource<Product | null | undefined>(() => {
+      return {
+        url: `${this.url}/${id()}`,
+        context: READ_CONTEXT
+      };
+    });
+  }
+
 }

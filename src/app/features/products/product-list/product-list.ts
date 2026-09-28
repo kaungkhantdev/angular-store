@@ -6,7 +6,7 @@ import { Search } from '@primeicons/angular/search';
 import { AvatarModule } from 'primeng/avatar';
 import { TagModule } from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';
-import { Paginator, PaginatorModule, PaginatorState } from 'primeng/paginator';
+// import { Paginator, PaginatorModule, PaginatorState } from 'primeng/paginator';
 import { ProductService } from '../data/product.service';
 import { it } from 'vitest';
 import { ProductError } from '../../../shared/ui/product-error/product-error';
@@ -23,8 +23,8 @@ import { ProductEmpty } from '../../../shared/ui/product-empty/product-empty';
     AvatarModule,
     TagModule,
     ButtonModule,
-    PaginatorModule,
-    Paginator,
+    // PaginatorModule,
+    // Paginator,
     ProductError,
     ProductLoading,
     ProductCard,
