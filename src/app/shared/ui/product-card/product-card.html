@@ -2,7 +2,7 @@
 
 <div class="flex justify-center">
   <div class="max-w-sm w-full space-y-2">
-    <div>
+    <a [routerLink]="['/products', item.id]">
       <div class="relative">
         <img
           class="w-full max-h-80 rounded-2xl p-16 border border-gray-100"
@@ -10,7 +10,7 @@
           [src]="item.image"
         />
       </div>
-    </div>
+    </a>
     <div>
       <span class="font-bold">{{item.title}}</span>
     </div>

@@ -6,9 +6,19 @@
       <img src="/greeting-avatar.svg" alt="App Logo" class="w-full">
       <h4 class="text-center">Store</h4>
     </div>
-<!--    auth-->
-    <div class="flex items-center gap-2">
-      <button pButton class="!rounded-full">Login</button>
+    <div class="flex items-center justify-between gap-6">
+      <!--    cart-->
+      <div>
+        <a routerLink="/carts">
+          <p-overlaybadge [value]="cart.itemCount() ?? 0">
+            <svg data-p-icon="shopping-cart" [size]="24"></svg>
+          </p-overlaybadge>
+        </a>
+      </div>
+      <!--    auth-->
+      <div class="flex items-center gap-2">
+        <button pButton class="!rounded-full">Login</button>
+      </div>
     </div>
   </header>
 <!--  main -->

@@ -8,10 +8,15 @@ export const routes: Routes = [
         children: [
           {
             path: '',
-            title: 'Products',
-            loadComponent: () =>
-              import('./features/products/product-list/product-list').then(m => m.ProductList),
+            redirectTo: 'products',
+            pathMatch: 'full',
+          },
+          {
+            path: 'products',
+            loadChildren: () =>
+              import('./features/products/products.route').then((m) => m.productsRoute)
           }
         ]
-    }
+    },
+
 ];
